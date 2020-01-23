@@ -1,0 +1,25 @@
+h1 {
+  color: rgb(47, 47, 47);
+}
+h2 {
+  color: cadetblue;
+}
+h3 {
+  color: blueviolet;
+}
+h4 {
+  color: rgb(86, 137, 137);
+}
+h5 {
+  color: rgb(0, 0, 0);
+}
+h6 {
+  color: rgb(86, 82, 162);
+}
+h7 {
+  color: aqua;
+}
+
+h1,h2,h3,h4,h5,h6:hover {
+  cursor: pointer;
+}
