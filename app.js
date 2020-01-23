@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// Turn counter
-let turnCounter = 0;
+  // Turn counter
+  let turnCounter = 1;
 
   let div = document.createElement('div');
   let h1 = document.createElement('h1');
@@ -68,32 +68,31 @@ let turnCounter = 0;
 
 
 
-
+  var colors = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'aqua', 'brown'];
 
   // Event listener
   div.addEventListener('dblclick', (e) => {
-
-    var colors = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'aqua', 'brown'];
-
     e.target.style.color = colors[Math.floor(Math.random() * colors.length)];
-
   })
 
 
- 
-    button.addEventListener('click', () => {
 
-      var entry = document.createElement('h1');
-      entry.id = turnCounter
-      entry.appendChild(document.createTextNode(`This is list item ${turnCounter}`));
-      document.body.appendChild(entry);
-turnCounter++
+  button.addEventListener('click', () => {
 
+    var entry = document.createElement('li');
+    entry.id = turnCounter
+    entry.appendChild(document.createTextNode(`This is list item ${turnCounter}`));
+    document.body.appendChild(entry);
+    turnCounter++
+
+    entry.addEventListener('click', function () {
+      entry.style.color = colors[Math.floor(Math.random() * colors.length)];
     })
-  
+    
+    entry.addEventListener('dblclick', () => {
 
-
-
-
-
+      entry.parentNode.removeChild(entry);
+    })
+  })
 })
+
